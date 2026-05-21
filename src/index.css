@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-midnight: #201e23;
+  --color-midnight-light: #2a2830;
+  --color-golden: #fcdd57;
+  --color-golden-dim: #d4b845;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-svh overflow-x-hidden bg-midnight font-sans text-white antialiased;
+  }
+
+  #root {
+    @apply min-h-svh w-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-golden via-white to-golden bg-clip-text text-transparent;
+  }
+
+  .btn-glow {
+    box-shadow:
+      0 0 20px rgba(252, 221, 87, 0.35),
+      0 0 40px rgba(252, 221, 87, 0.15);
+  }
+
+  .btn-glow:hover {
+    box-shadow:
+      0 0 28px rgba(252, 221, 87, 0.55),
+      0 0 56px rgba(252, 221, 87, 0.25);
+  }
+}
